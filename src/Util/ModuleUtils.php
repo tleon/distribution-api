@@ -74,6 +74,7 @@ class ModuleUtils
     {
         $modules = $this->bucket->objects(['prefix' => 'assets/modules/']);
         $list = new ModuleCollection();
+        return $list;
         foreach ($modules as $moduleObject) {
             $moduleName = $this->getModuleNameFromPath($moduleObject->info()['name']);
             $module = $list->get($moduleName);

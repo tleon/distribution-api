@@ -48,6 +48,7 @@ class RunCommand extends Command
             && $this->generateJsonCommand->execute($input, $output) === self::SUCCESS
             && $this->uploadAssetsCommand->execute($input, $output) === self::SUCCESS
         ) {
+            var_dump(memory_get_peak_usage());
             return self::SUCCESS;
         }
 
